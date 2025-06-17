@@ -42,6 +42,9 @@ def main():
         initial_sidebar_state="expanded"
     )
     
+    # Demo banner
+    st.success("🎯 **Demo Dashboard**: Showcasing Walmart M5 forecasting analysis with interactive visualizations and realistic demo data based on M5 competition patterns.")
+    
     # Custom CSS for better styling
     st.markdown("""
     <style>

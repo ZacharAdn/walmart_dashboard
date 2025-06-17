@@ -73,7 +73,7 @@ def show():
         )
     
     if not selected_models:
-        st.warning("Please select at least one model to analyze")
+        st.info("Please select at least one model to analyze")
         return
     
     # Filter data based on selections

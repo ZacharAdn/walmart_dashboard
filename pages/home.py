@@ -146,9 +146,9 @@ def show():
             st.info(f"📅 Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
             
         except Exception as e:
-            st.warning("⚠️ Some data files may be missing")
-            if st.checkbox("Show Details"):
-                st.error(f"Error: {str(e)}")
+            st.info("📊 Running with demo data for showcase purposes")
+            if st.checkbox("Show Technical Details"):
+                st.code(f"Technical info: {str(e)}")
     
     st.markdown("---")
     

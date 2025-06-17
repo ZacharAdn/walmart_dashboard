@@ -76,7 +76,7 @@ def show():
             st.subheader("🤖 Model Performance Overview")
         
         if df.empty:
-            st.warning("No data available for the selected dataset")
+            st.info("No data available for the selected dataset")
             return
             
     except Exception as e:
@@ -380,7 +380,7 @@ def show():
                     fig.update_layout(height=400)
                     st.plotly_chart(fig, use_container_width=True)
                 else:
-                    st.warning("No data available for the selected columns")
+                    st.info("No data available for the selected columns")
         else:
             st.info("No date columns found for time series analysis")
     

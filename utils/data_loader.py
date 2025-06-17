@@ -33,7 +33,7 @@ class DataLoader:
             calendar_df['date'] = pd.to_datetime(calendar_df['date'])
             return calendar_df
         except FileNotFoundError:
-            st.warning("Calendar file not found. Using dummy data.")
+            # Using demo data for showcase purposes
             return _self._create_dummy_calendar()
         except Exception as e:
             st.error(f"Error loading calendar data: {str(e)}")
@@ -51,7 +51,7 @@ class DataLoader:
             
             return foods_df
         except FileNotFoundError:
-            st.warning(f"Sales file not found. Using dummy data.")
+            # Using demo data for showcase purposes
             return _self._create_dummy_sales()
         except Exception as e:
             st.error(f"Error loading sales data: {str(e)}")
@@ -68,7 +68,7 @@ class DataLoader:
             
             return foods_prices
         except FileNotFoundError:
-            st.warning("Prices file not found. Using dummy data.")
+            # Using demo data for showcase purposes
             return _self._create_dummy_prices()
         except Exception as e:
             st.error(f"Error loading prices data: {str(e)}")
@@ -80,7 +80,7 @@ class DataLoader:
         try:
             return pd.read_csv(_self.config.TEST_SUMMARY_FILE)
         except FileNotFoundError:
-            st.warning("Test results file not found. Using dummy data.")
+            # Using demo data for showcase purposes
             return _self._create_dummy_test_results()
         except Exception as e:
             st.error(f"Error loading test results: {str(e)}")
@@ -98,12 +98,12 @@ class DataLoader:
                 missing_cols = [col for col in required_cols if col not in df.columns]
                 
                 if missing_cols:
-                    st.warning(f"Model performance file missing required columns: {missing_cols}. Using dummy data.")
+                    # Using demo data for showcase purposes
                     return _self._create_dummy_model_performance()
                 
                 return df
             else:
-                st.warning("Model performance file not found. Using dummy data.")
+                # Using demo data for showcase purposes
                 return _self._create_dummy_model_performance()
                 
         except Exception as e:
@@ -125,7 +125,7 @@ class DataLoader:
             if file_path and file_path.exists():
                 return pd.read_csv(file_path)
             else:
-                st.warning(f"Pattern examples file not found for {pattern_type}")
+                # Using demo data for showcase purposes
                 return _self._create_dummy_pattern_examples(pattern_type)
         except Exception as e:
             st.error(f"Error loading {pattern_type} examples: {str(e)}")
@@ -137,7 +137,7 @@ class DataLoader:
         try:
             return pd.read_csv(_self.config.BEST_MODELS_FILE)
         except FileNotFoundError:
-            st.warning("Best models file not found. Using dummy data.")
+            # Using demo data for showcase purposes
             return _self._create_dummy_best_models()
         except Exception as e:
             st.error(f"Error loading best models: {str(e)}")

@@ -28,7 +28,7 @@ def show():
         return
     
     if test_results.empty:
-        st.warning("No test results data available")
+        st.info("No test results data available")
         return
     
     # Test Success Overview

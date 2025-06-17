@@ -80,7 +80,7 @@ def show():
         )
     
     if not selected_product:
-        st.warning("Please select a product to analyze")
+        st.info("Please select a product to analyze")
         return
     
     st.markdown("---")
@@ -93,7 +93,7 @@ def show():
         time_series_data = data_loader.get_product_time_series(selected_product, selected_store)
         
         if time_series_data.empty:
-            st.warning(f"No time series data available for {selected_product} at {selected_store}")
+            st.info(f"No time series data available for {selected_product} at {selected_store}")
             # Create dummy time series data
             dates = pd.date_range(start='2011-01-29', end='2016-06-19', freq='D')
             time_series_data = pd.DataFrame({
