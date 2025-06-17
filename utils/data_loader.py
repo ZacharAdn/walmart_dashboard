@@ -33,7 +33,7 @@ class DataLoader:
             calendar_df['date'] = pd.to_datetime(calendar_df['date'])
             return calendar_df
         except FileNotFoundError:
-            # Using demo data for showcase purposes
+            # Calendar file should be available
             return _self._create_dummy_calendar()
         except Exception as e:
             st.error(f"Error loading calendar data: {str(e)}")
